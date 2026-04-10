@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3wvnxty5k2nl"]
+
+[ext_resource type="Texture2D" uid="uid://bwol7vnnsfvcl" path="res://resources/player.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bmbmewbwt6fdm" path="res://player.gd" id="2_onrkg"]
+
+[node name="Player" type="Sprite2D" unique_id=471767252]
+texture = ExtResource("1_4flbx")
+script = ExtResource("2_onrkg")
+metadata/_edit_group_ = true
