@@ -11,5 +11,7 @@ func fire() -> void:
 	proj_instance.initialize(
 		projectile_container,
 		cannon_tip.global_position,
-		global_position.direction_to(cannon_tip.global_position)
+		global_position.direction_to(cannon_tip.global_position),
+		true,
+		self
 	)

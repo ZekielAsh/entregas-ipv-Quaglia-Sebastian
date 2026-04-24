@@ -6,4 +6,3 @@ extends Node
 func _ready() -> void:
 	randomize()
 	player.set_projectile_container(self)
-	turret_spawner.spawn_turrets(player)

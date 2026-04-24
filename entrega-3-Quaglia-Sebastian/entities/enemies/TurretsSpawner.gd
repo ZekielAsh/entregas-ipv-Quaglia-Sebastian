@@ -1,16 +1,24 @@
-extends Node
+extends Node2D
 
 @export var turret_scene: PackedScene
+@export var spawn_radius: float = 300.0
+@export var turret_count: int = 3
 
-func spawn_turrets(player: Node2D) -> void:
-	var visible_rect: Rect2 = get_viewport().get_visible_rect()
-	for i in 3:
+func _ready():
+	randomize()
+	call_deferred("spawn_turrets")
+
+func spawn_turrets():
+	for i in turret_count:
 		var turret_instance: Node2D = turret_scene.instantiate()
 		
-		var turret_pos: Vector2 = Vector2(
-			randf_range(visible_rect.position.x, visible_rect.end.x),
-			randf_range(visible_rect.position.y + 30, player.global_position.y - 50)
+		var offset = Vector2(
+			randf_range(-spawn_radius, spawn_radius),
+			randf_range(-spawn_radius, spawn_radius)
 		)
 		
-		add_child(turret_instance)
-		turret_instance.initialize(turret_pos, player, self)
+		var spawn_position = global_position + offset
+		
+		get_parent().add_child(turret_instance)
+		turret_instance.call_deferred("initialize", spawn_position, get_parent())
+		

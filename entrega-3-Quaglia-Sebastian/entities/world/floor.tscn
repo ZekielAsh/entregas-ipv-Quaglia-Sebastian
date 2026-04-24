@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1huoadh32k0j"]
+
+[ext_resource type="Texture2D" uid="uid://d1swxpnlo1dgm" path="res://assets/textures/floor.png" id="1_ipw54"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3dxm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgr22"]
+size = Vector2(797, 185)
+
+[node name="Floor" type="StaticBody2D" unique_id=1334582532]
+disable_mode = 1
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_3dxm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747351093]
+position = Vector2(-6.4999504, 9.749984)
+scale = Vector2(12.106062, 2.8257577)
+texture = ExtResource("1_ipw54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1440114415]
+position = Vector2(-6.5, 10.5)
+shape = SubResource("RectangleShape2D_lgr22")
